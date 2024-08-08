@@ -1,0 +1,13 @@
+provider "google" {
+  project = "cts01-kavithaan"
+  credentials = "/workspaces/terraform-zero-to-hero/Terraform-1/myfirstkey.json"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+
+module "VMinstance" {
+    source = "/workspaces/terraform-zero-to-hero/Terraform-1/module-vm"
+    image_name = "ubuntu-minimal-2210-kinetic-amd64-v20230126"
+    machine_type = "n1-standard-1"
+  
+}
